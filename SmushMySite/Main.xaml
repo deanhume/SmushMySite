@@ -1,0 +1,50 @@
+﻿<Controls:MetroWindow x:Class="SmushMySite.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Getting Started" Height="354" Width="626" ShowTitleBar="True" ShowIconOnTitleBar="True">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="Resources\Icons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid ShowGridLines="True" Height="379">
+        <DockPanel Name="mainDock" Margin="0,0,0,50">
+            <!-- The border is used to compute the rendered height with margins.
+           topBar contents will be displayed on the extended glass frame.-->
+        </DockPanel>
+        <Border Name="topBar" Margin="1,45,-1,50">
+            <Grid Name="grid" Height="278">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="125" />
+                    <ColumnDefinition Width="42" />
+                    <ColumnDefinition Width="435" />
+                </Grid.ColumnDefinitions>
+                <Button Content="Smush My Entire Site" Height="35" HorizontalAlignment="Left" Margin="87,164,0,0" Name="btnEntire" VerticalAlignment="Top" Width="171" Click="btnEntire_Click" Panel.ZIndex="1" Grid.ColumnSpan="3" Style="{DynamicResource SquareButtonStyle}" />
+                <Button Content="Smush Images for a Url" Height="35" HorizontalAlignment="Left" Margin="174,164,0,0" Name="btnUrl" VerticalAlignment="Top" Width="171" Click="btnUrl_Click" Panel.ZIndex="2" Grid.Column="2" Style="{DynamicResource SquareButtonStyle}" />
+                <Label Content="Smush My Site" Height="37" HorizontalAlignment="Left" Margin="30,106,0,0" Name="label1" VerticalAlignment="Top" Width="217" FontSize="28" Grid.Column="2" Foreground="Black" FontWeight="Bold" Cursor="None" />
+                <Label Content="Using Yahoo! YSlow - Smush.it™" FontSize="12" Height="34" Margin="38,232,208,0" Name="label2" VerticalAlignment="Top" Width="189" Grid.Column="2" Foreground="Black" FontWeight="Normal" />
+                <Menu Height="25" Margin="0,-49,-21,0" Name="menu1" VerticalAlignment="Top" Grid.ColumnSpan="3">
+                    <MenuItem Header="File">
+                        <MenuItem Header="About" Click="About_Click" />
+                        <MenuItem Header="Check for Updates" Click="Update_Click" />
+                        <MenuItem Header="Exit" Click="Exit_Click" />
+                    </MenuItem>
+                </Menu>
+            </Grid>
+        </Border>
+        <Rectangle Margin="263,45,279,234" RenderTransformOrigin="1.8,1.786" Name="imgTick">
+            <Rectangle.Fill>
+                <VisualBrush Visual="{StaticResource appbar_camera_flash}" />
+            </Rectangle.Fill>
+        </Rectangle>
+    </Grid>
+   
+</Controls:MetroWindow>

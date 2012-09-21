@@ -1,0 +1,44 @@
+﻿<Window x:Class="SmushMySite.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="About" Height="540" Width="445">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="Resources\Icons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Margin="0,14,0,410">
+        <Grid HorizontalAlignment="Left" Height="76" Margin="87,10,0,0" VerticalAlignment="Top" Width="250">
+            <Rectangle HorizontalAlignment="Left" Height="42" Margin="89,0,0,0" VerticalAlignment="Top" Width="59">
+                <Rectangle.Fill>
+                    <VisualBrush
+        Visual="{StaticResource appbar_grade_a_plus}" />
+                </Rectangle.Fill>
+            </Rectangle>
+
+        </Grid>
+        <Rectangle HorizontalAlignment="Left" Height="42" Margin="179,222,0,-178" VerticalAlignment="Top" Width="59">
+            <Rectangle.Fill>
+                <VisualBrush
+        Visual="{StaticResource appbar_trophy}"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox HorizontalAlignment="Left" Height="112" Margin="43,91,0,-117" TextWrapping="Wrap" Text="In a constant search to improve the speed of our websites, developers need to look at image optimization to reduce the total bytes in a webpage. This tool compresses and reduces the overall size of the images on a webpage by stripping and removing any unnecessary metadata. By taking advantage of the Yahoo Smush.it service, this tool will reduce the size of your image files without affecting the quality of the image.
+" VerticalAlignment="Top" Width="369"/>
+        <TextBox HorizontalAlignment="Left" Height="112" Margin="43,288,0,-314" TextWrapping="Wrap" Text="In a constant search to improve the speed of our websites, developers need to look at image optimization to reduce the total bytes in a webpage. This tool compresses and reduces the overall size of the images on a webpage by stripping and removing any unnecessary metadata. By taking advantage of the Yahoo Smush.it service, this tool will reduce the size of your image files without affecting the quality of the image. " VerticalAlignment="Top" Width="369"/>
+        <Rectangle HorizontalAlignment="Left" Height="42" Margin="179,417,0,-392" VerticalAlignment="Top" Width="59">
+            <Rectangle.Fill>
+                <VisualBrush
+        			Visual="{StaticResource appbar_smiley_kiki}"/>
+            </Rectangle.Fill>
+        </Rectangle>
+    </Grid>
+</Window>
