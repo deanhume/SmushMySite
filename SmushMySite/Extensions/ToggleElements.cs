@@ -32,7 +32,7 @@ namespace SmushMySite.Extensions
                         delegate()
                             {
                                 // is there any content?
-                                if (string.IsNullOrEmpty(content))
+                                if (!string.IsNullOrEmpty(content))
                                 {
                                     label.Content = content;
                                 }

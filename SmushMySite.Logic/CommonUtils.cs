@@ -6,6 +6,7 @@
     using System.Net;
     using HtmlAgilityPack;
     using Interfaces;
+    using SmushMySite.Logic.Entities;
 
     public class CommonUtils : ICommonUtils
     {
@@ -29,6 +30,25 @@
                 return url.Replace("www.", "");
             }
             return url;
+        }
+
+        /// <summary>
+        /// A simple helper method to 
+        /// determine if the URL contains a 
+        /// leading "http://"
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public string AppendHttp(string url)
+        {
+            if (url.Contains("http://"))
+            {
+                return url;
+            }
+            else
+            {
+                return "http://" + url;
+            }
         }
 
         /// <summary>
@@ -170,14 +190,20 @@
 
         /// <summary>
         /// Downloads a web page and returns a string
+        /// Might want to consider making this more async, 
+        /// but we are already in a new thread.
         /// </summary>
         /// <param name="pageUrl"></param>
         /// <returns></returns>
         public string DownloadWebPage(string pageUrl)
         {
-            WebClient client = new WebClient();
-            string downloadString = client.DownloadString(pageUrl);
-            client.Dispose();
+            // Initialize the string
+            string downloadString = string.Empty;
+
+            using (WebClient client = new WebClient())
+            {
+                downloadString = client.DownloadString(pageUrl);
+            }
 
             return downloadString;
         }

@@ -120,8 +120,8 @@
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
     <Compile Include="Extensions\ToggleElements.cs" />
-    <Compile Include="Test.xaml.cs">
-      <DependentUpon>Test.xaml</DependentUpon>
+    <Compile Include="SmushMyPage.xaml.cs">
+      <DependentUpon>SmushMyPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="Main.xaml.cs">
@@ -129,9 +129,6 @@
     </Compile>
     <Compile Include="ProxyAuthentication.xaml.cs">
       <DependentUpon>ProxyAuthentication.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SmushPage.xaml.cs">
-      <DependentUpon>SmushPage.xaml</DependentUpon>
     </Compile>
     <Page Include="About.xaml">
       <SubType>Designer</SubType>
@@ -157,7 +154,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Test.xaml">
+    <Page Include="SmushMyPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -189,10 +186,6 @@
       <DependentUpon>SmushSite.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SmushPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

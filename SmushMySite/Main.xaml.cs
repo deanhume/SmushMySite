@@ -32,7 +32,7 @@ namespace SmushMySite
 
         private void btnUrl_Click(object sender, RoutedEventArgs e)
         {
-            var smushPage = new Test();
+            var smushPage = new SmushMyPage();
             smushPage.Show();
         }
 

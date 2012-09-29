@@ -12,11 +12,12 @@
     using MahApps.Metro.Controls;
     using Extensions;
     using MessageBox = System.Windows.MessageBox;
+    using System.Threading;
 
     /// <summary>
     /// Interaction logic for SmushPage.xaml
     /// </summary>
-    public partial class Test : MetroWindow
+    public partial class SmushMyPage : MetroWindow
     {
         private readonly IUtils _utils;
         private readonly ICommonUtils _commonUtils;
@@ -25,7 +26,7 @@
         IEnumerable<SquishedImage> _images = new List<SquishedImage>();
 
         #region ctor
-        public Test()
+        public SmushMyPage()
         {
             
             InitializeComponent();
@@ -89,13 +90,31 @@
 
         /// <summary>
         /// Smushes and downloads all the images on the web page.
+        /// This method is a little longer than I would like
+        /// and could be refactored.
         /// </summary>
         /// <param name="pageUrl"></param>
         /// <param name="outputUrl"></param>
         public void SmushAndDownloadImages(string pageUrl, string outputUrl)
         {
             // Download from the page
-            string downloadString = _commonUtils.DownloadWebPage(pageUrl);
+            string downloadString;
+            try
+            {
+                pageUrl = _commonUtils.AppendHttp(pageUrl);
+                downloadString = _commonUtils.DownloadWebPage(pageUrl);
+            }
+            catch (Exception e)
+            {
+                // Disable the progress ring
+                progressRing.ToggleProgressRing(false);
+
+                // Update the error label
+                lblError.ToggleLabel(true, e.Message);
+
+                // Get outta here
+                return;
+            }
 
             // Process the images in the CSS file.
             List<string> alreadyProcessed = new List<string>();
@@ -115,7 +134,7 @@
             _utils.DownloadAndSave(_images, outputUrl);
 
             // Add the complete images
-            lblComplete.ToggleLabel(true);
+            lblComplete.ToggleLabel(true, "Complete");
             imgTick.ToggleImage(true);
 
             // Decide Whether or not to display the Info button
@@ -138,7 +157,6 @@
         {
             lblError.Content = string.Empty;
             lblComplete.ToggleLabel(false);
-            //imgTick.ToggleImage(false);
             btnInfo.ToggleButton(false);
         }
 

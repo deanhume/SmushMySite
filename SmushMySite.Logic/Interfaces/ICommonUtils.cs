@@ -1,6 +1,7 @@
 ﻿namespace SmushMySite.Logic.Interfaces
 {
     using System.Collections.Generic;
+    using SmushMySite.Logic.Entities;
 
     public interface ICommonUtils
     {
@@ -10,6 +11,14 @@
         /// <param name="url"></param>
         /// <returns></returns>
         string RemoveHttp(string url);
+
+        /// <summary>
+        /// A simple helper method to determine if the URL contains a 
+        /// leading "http://"
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        string AppendHttp(string url);
 
         /// <summary>
         /// Gets the contents of a web page

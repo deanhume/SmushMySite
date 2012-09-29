@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="CacheObject.cs" />
     <Compile Include="CommonUtils.cs" />
+    <Compile Include="Entities\DownloadedWebPage.cs" />
     <Compile Include="Entities\ProxyDetails.cs" />
     <Compile Include="Entities\UserCredentials.cs" />
     <Compile Include="Interfaces\ICommonUtils.cs" />
