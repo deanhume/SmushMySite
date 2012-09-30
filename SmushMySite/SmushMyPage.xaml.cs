@@ -102,7 +102,7 @@
             try
             {
                 pageUrl = _commonUtils.AppendHttp(pageUrl);
-                downloadString = _commonUtils.DownloadWebPage(pageUrl);
+                downloadString = _commonUtils.DownloadFromUrl(pageUrl);
             }
             catch (Exception e)
             {
@@ -123,7 +123,7 @@
             IEnumerable<string> imagesInHtmlString = _commonUtils.GetImagesInHtmlString(downloadString);
 
             // Show an error message
-            lblError.ToggleLabel(true, (imagesInHtmlString.Count() + squishedCssImages.Count()) + " Image(s) Found");
+            //lblError.ToggleLabel(true, (imagesInHtmlString.Count() + squishedCssImages.Count()) + " Image(s) Found");
 
             _images = _smushLogic.ProcessImages(imagesInHtmlString, pageUrl);
 

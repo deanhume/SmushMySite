@@ -213,7 +213,7 @@
                 cssToDownload = builder.ToString();
             }
 
-            string downloadString = _commonUtils.DownloadWebPage(cssToDownload);
+            string downloadString = _commonUtils.DownloadFromUrl(cssToDownload);
             return GetImagesUrlFromCss(downloadString, cssToDownload);
         }
 

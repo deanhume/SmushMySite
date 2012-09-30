@@ -32,10 +32,7 @@
                 <Label Content="Smush My Site" Height="37" HorizontalAlignment="Left" Margin="30,106,0,0" Name="label1" VerticalAlignment="Top" Width="217" FontSize="28" Grid.Column="2" Foreground="Black" FontWeight="Bold" Cursor="None" />
                 <Label Content="Using Yahoo! YSlow - Smush.it™" FontSize="12" Height="34" Margin="38,232,208,0" Name="label2" VerticalAlignment="Top" Width="189" Grid.Column="2" Foreground="Black" FontWeight="Normal" />
                 <Menu Height="25" Margin="0,-49,-21,0" Name="menu1" VerticalAlignment="Top" Grid.ColumnSpan="3">
-                    <MenuItem Header="File">
-                        <MenuItem Header="About" Click="About_Click" />
-                        <MenuItem Header="Check for Updates" Click="Update_Click" />
-                        <MenuItem Header="Exit" Click="Exit_Click" />
+                    <MenuItem Header="About" Click="About_Click" >
                     </MenuItem>
                 </Menu>
             </Grid>

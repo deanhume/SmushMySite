@@ -4,6 +4,8 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Net;
+    using System.Text;
+    using System.Web;
     using HtmlAgilityPack;
     using Interfaces;
     using SmushMySite.Logic.Entities;
@@ -195,14 +197,17 @@
         /// </summary>
         /// <param name="pageUrl"></param>
         /// <returns></returns>
-        public string DownloadWebPage(string pageUrl)
+        public string DownloadFromUrl(string pageUrl)
         {
             // Initialize the string
             string downloadString = string.Empty;
 
             using (WebClient client = new WebClient())
             {
-                downloadString = client.DownloadString(pageUrl);
+                // Get the correct format
+                downloadString = Encoding.UTF8.GetString(client.DownloadData(pageUrl));
+
+                downloadString = HttpUtility.HtmlDecode(downloadString).TrimStart().TrimEnd();
             }
 
             return downloadString;

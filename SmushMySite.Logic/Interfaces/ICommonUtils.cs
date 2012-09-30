@@ -54,7 +54,7 @@
         /// </summary>
         /// <param name="pageUrl"></param>
         /// <returns></returns>
-        string DownloadWebPage(string pageUrl);
+        string DownloadFromUrl(string pageUrl);
 
         /// <summary>
         /// Checks if the extension is a valid CSS file.
